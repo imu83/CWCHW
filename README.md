@@ -17,3 +17,6 @@ If there is a request for login to authentication_mobile.php then the service wi
 parameters in the database and if verified then will return the users profile as json.
 
 thats all for now... happy coding... happy sharing...
+
+Md. Amran Hasan
+bd.linkedin.com/in/amran/
