@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script src="scripts/validation.js" ></script>
+
+</head>
+<body>
+	<form name="formlogin" action="authentication.php" method="post"
+		onsubmit="return IsValid()">
+		<div style="margin-left: 35%; margin-top: 20%; border-style: inset; height: 150px; width: 300px;">
+			<table style="margin-top: 30px; margin-left: 20px;">
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>User ID:</td>
+					<td><input id="userID" name="userID" type="text"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><input id="password" name="password" type="password"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>					
+					<td><br><input type="submit" value="submit" style="margin-left: 30px;"></td>
+					<td></td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</body>
+</html>
