@@ -18,5 +18,5 @@ parameters in the database and if verified then will return the users profile as
 
 thats all for now... happy coding... happy sharing...
 
-Md. Amran Hasan
-bd.linkedin.com/in/amran/
+Md. Amran Hasan 
+https://www.linkedin.com/in/amran
