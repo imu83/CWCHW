@@ -1,20 +1,18 @@
 <?php
-
-// include_once $_SERVER ['DOCUMENT_ROOT'] . '/AmranProjects/application/Utility/Functions.php';
 include_once 'Utility/Functions.php';
 
 $parameterList = array (
 		"uid",
 		"upass",
-		"ufullname",		
+		"ufullname",
 		"uaddress",
 		"ucity",
 		"ucountry",
-		"ucell",		
+		"ucell",
 		"uemail" 
 );
 
-$validList = ValidateParamaters ( $parameterList );
+$validList = ValidateParamatersPost ( $parameterList );
 
 if (sizeof ( $validList ) == sizeof ( $parameterList )) {
 	SetupConnectionToDB ();

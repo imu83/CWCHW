@@ -5,7 +5,7 @@ $parameterList = array (
 		"upass" 
 );
 
-$validList = ValidateParamaters ( $parameterList );
+$validList = ValidateParamatersPost ( $parameterList );
 
 if (sizeof ( $validList ) == sizeof ( $parameterList )) {
 	

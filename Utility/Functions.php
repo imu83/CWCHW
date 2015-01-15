@@ -38,13 +38,51 @@ function ValidateParamaters($parameterList) {
 	}		
 	return $validList;	
 }
+function ValidateParamatersPost($parameterList) {
+	$validList = array ();
+	$invalidList = array ();
+
+	foreach ( $parameterList as $parameterName ) {
+		if (isset ( $_POST [$parameterName] )) {
+
+			$parameterValue = $_POST [$parameterName];
+
+			if (trim ( $parameterValue != "" )) {
+				array_push ( $validList, $parameterValue );
+			}
+			else {
+				$parameterValue = "(any value in '{$parameterName}' parameter was not supplied)";
+				array_push ( $invalidList, $parameterValue );
+			}
+		} else {
+			$parameterValue = "('{$parameterName}' was not supplied as parameter)";
+			array_push ( $invalidList, $parameterValue );
+		}
+	}
+
+	if (sizeof ( $invalidList ) > 0) {
+		// echo $invalidList [0];
+		// print_r( $invalidList);
+		// echo '<pre>'; print_r($invalidList); echo '</pre>';
+		/*foreach ( $invalidList as $aItem ) {
+			echo $aItem, '<br>';
+			}*/
+		$count=0;
+		//echo "<table border = 1>";
+		echo "<table border=1 align=\"center\" style=\"margin-top: 0%; width: 25%; border-color: maroon; font-family: monospace;\">";
+		foreach ( $invalidList as $aItem ) {
+			echo "<tr><td>". $count += 1 ,".</td><td> {$aItem} </td></tr>";
+		}
+		echo "</table>";
+	}
+	return $validList;
+}
 function SetupConnectionToDB() {
 	$db_host = 'localhost';
 	$db_user = 'amran';
 	$db_pwd = '';
 	
-	$db_name = 'examples';
-	$db_tbl_name = 'cars';
+	$db_name = 'examples';	
 	
 	if (! mysql_connect ( $db_host, $db_user, $db_pwd ))
 		die ( "Can't connect to MySQL" );
@@ -57,8 +95,7 @@ function SetupConnectionToDBAndReturn() {
 	$db_user = 'amran';
 	$db_pwd = '';
 	
-	$db_name = 'examples';
-	$db_tbl_name = 'cars';
+	$db_name = 'examples';	
 	
 	$aDbConnection = mysql_connect ( $db_host, $db_user, $db_pwd ) or die ( "Unable to connect to MySQL" );
 	
